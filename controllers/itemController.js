@@ -6,6 +6,10 @@ exports.createItem = async (req, res) => {
      #swagger.tags = ['Items']
      #swagger.description = 'Create an item'
      #swagger.summary = 'Create an item'
+     #swagger.parameters['token'] = {
+         description: 'Token from Security',
+         required: true
+     }
      #swagger.parameters['data'] = {
          in: 'body',
          description: 'Data to create an item',
@@ -32,6 +36,10 @@ exports.getAllItems = async (req, res) => {
      #swagger.tags = ['Items']
      #swagger.description = 'Get all items entries'
      #swagger.summary = 'Get all items entries'
+     #swagger.parameters['token'] = {
+         description: 'Token from Security',
+         required: true
+     }
      #swagger.responses[200] = {
          description: 'Items entries successfully obtained',
      }
@@ -54,6 +62,10 @@ exports.getItem = async (req, res) => {
     #swagger.tags = ['Items']
     #swagger.description = 'Get an item entry'
     #swagger.summary = 'Get an item entry'
+    #swagger.parameters['token'] = {
+        description: 'Token from Security',
+        required: true
+    }
     #swagger.parameters['id'] = {
         description: 'Item id',
         required: true,
@@ -83,6 +95,28 @@ exports.getItem = async (req, res) => {
 }
 
 exports.updateItem = async (req, res) => {
+    /* 
+     #swagger.tags = ['Items']
+     #swagger.description = 'Update an Item'
+     #swagger.summary = 'Update an Item'
+     #swagger.parameters['token'] = {
+         description: 'Token from Security',
+         required: true
+     }
+    #swagger.parameters['id'] = {
+        description: 'Item id',
+        required: true,
+    }
+    #swagger.responses[404] = {
+        description: 'Item not found',
+    }
+    #swagger.responses[400] = {
+        description: 'Bad request',
+    }
+    #swagger.responses[200] = {
+        description: 'Item Updated',
+    }
+   */
     try {
         const itemId = req.params.id
         const data = req.body
@@ -95,6 +129,28 @@ exports.updateItem = async (req, res) => {
 }
 
 exports.deleteItem = async (req, res) => {
+    /* 
+     #swagger.tags = ['Items']
+     #swagger.description = 'Delete an Item'
+     #swagger.summary = 'Delete an Item'
+     #swagger.parameters['token'] = {
+         description: 'Token from Security',
+         required: true
+     }
+    #swagger.parameters['id'] = {
+        description: 'Item id',
+        required: true,
+    }
+    #swagger.responses[404] = {
+        description: 'Item not found',
+    }
+    #swagger.responses[400] = {
+        description: 'Bad request',
+    }
+    #swagger.responses[200] = {
+        description: 'Item Deleted',
+    }
+   */
     try {
         const itemId = req.params.id
         await db.collection('items').doc(itemId).delete()

@@ -18,12 +18,15 @@ admin.initializeApp({
 const app = express();
 app.use(bodyParser.json());
 
+const jwtVerification = require('./middleware/jwt_verification')
+
+const apiRouter = require('./routes/api')
+
 const PORT = process.env.PORT || 5000;
 
 app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
-
-app.use('/api', require('./routes/api'));
+app.use('/api', jwtVerification, apiRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
