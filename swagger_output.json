@@ -21,9 +21,9 @@
         "parameters": [
           {
             "name": "token",
+            "in": "header",
             "description": "Token from Security",
             "required": true,
-            "in": "query",
             "type": "string"
           },
           {
@@ -55,9 +55,9 @@
         "parameters": [
           {
             "name": "token",
+            "in": "header",
             "description": "Token from Security",
             "required": true,
-            "in": "query",
             "type": "string"
           }
         ],
@@ -88,9 +88,9 @@
           },
           {
             "name": "token",
+            "in": "header",
             "description": "Token from Security",
             "required": true,
-            "in": "query",
             "type": "string"
           }
         ],
@@ -122,9 +122,9 @@
           },
           {
             "name": "token",
+            "in": "header",
             "description": "Token from Security",
             "required": true,
-            "in": "query",
             "type": "string"
           }
         ],
@@ -156,9 +156,9 @@
           },
           {
             "name": "token",
+            "in": "header",
             "description": "Token from Security",
             "required": true,
-            "in": "query",
             "type": "string"
           }
         ],
